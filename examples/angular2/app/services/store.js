@@ -24,6 +24,7 @@ var TodoStore = (function () {
         this.todos = persistedTodos.map(function (todo) {
             var ret = new Todo(todo._title);
             ret.completed = todo.completed;
+            ret.date = todo.date;
             return ret;
         });
     }

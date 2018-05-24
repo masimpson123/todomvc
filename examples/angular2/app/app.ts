@@ -3,7 +3,7 @@ import {TodoStore, Todo} from './services/store';
 
 @Component({
 	selector: 'todo-app',
-	templateUrl: 'app/app.html'
+	templateUrl: 'app/app.html',
 })
 export default class TodoApp {
 	todoStore: TodoStore;

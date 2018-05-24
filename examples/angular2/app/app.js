@@ -47,6 +47,23 @@ var TodoApp = (function () {
             this.newTodoText = '';
         }
     };
+    TodoApp.prototype.updateTodoListDate = function (index,value) {
+        this.todoStore.todos[index].date=value;
+        //temporary solution to get local storage service to run on date change
+        this.todoStore.add('fjieownqi4punaksnekunr');
+        this.todoStore.remove('fjieownqi4punaksnekunr');
+    };
+    TodoApp.prototype.millisecondTest = function (x) {
+        //console.log(Date.parse(x)); //date selected
+        //console.log(Date.now()); //date today
+        console.log((Date.parse(x))) - (Date.now());
+        //if due is less than 1 day away turn red
+        if((Date.parse(x)) - (Date.now()) < 86400000){
+        return true;
+        } else {
+        return false
+        }
+    };
     TodoApp = __decorate([
         core_1.Component({
             selector: 'todo-app',
